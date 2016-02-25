@@ -20,4 +20,14 @@
   Scanner.prototype.hasNext = function hasNext() {
   	return this.pos !== this.tokens.length;
   };
+  
+  Scanner.prototype.nextArray = function nextArray() {
+    var size = this.nextNumber();
+    var array = new Array(size);
+    for(var i=0; i<size;i++) {
+      array[i] = this.nextNumber();
+    }
+    
+    return array;
+  };
 }());
